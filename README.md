@@ -2,7 +2,7 @@
 [comment]: # (co_work)
 ### Code relating to analysis of the CO absorption feature at 2.3 microns
 
-co_lines.py contains functions to evaluate the D<sub>CO</sub> index of Marmol-Queralto et al., 2008, A&A, 489. 
+co_index.py contains functions to evaluate the D<sub>CO</sub> index of Marmol-Queralto et al., 2008, A&A, 489. 
 
   * index(wavelength, flux)
     * Takes numpy ndarrays of wavelength (in microns only) and flux and evaluates the D<sub>CO</sub> index, returning a float.
