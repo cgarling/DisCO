@@ -15,4 +15,6 @@ These equations should be used by calling the function co_fitting(theta,logg,feh
   * theta: 5040 K / T<sub>eff</sub>
   * logg: logarithm of the surface gravity of your star. This is used to distinguish between the equations calibrated for giants and dwarfs; an exact value is not needed. If you know your star is a giant, logg=2.5 is a good value, and for dwarfs, I recommend logg=4.5.
   * feh: The iron abundace [Fe/H] for your star. These do factor into the fitting equations, so if you are unsure of the iron abundance of your star, estimating an [Fe/H] will usually introduce uncertainty. 
-  * agb: Marmol-Queralto et al. (2008) calibrated a fitting equation explicitly for AGB stars. If your star is on the AGB, you should set agb=True. The default is False. 
+  * agb: Marmol-Queralto et al. (2008) calibrated a fitting equation explicitly for AGB stars. If your star is on the AGB, you should set agb=True. The default is False.
+
+The function will return the value of the D<sub>CO</sub> index for a star with the properties you input.
