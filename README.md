@@ -18,3 +18,5 @@ These equations should be used by calling the function co_fitting(theta,logg,feh
   * agb: Marmol-Queralto et al. (2008) calibrated a fitting equation explicitly for AGB stars. If your star is on the AGB, you should set agb=True. The default is False.
 
 The function will return the value of the D<sub>CO</sub> index for a star with the properties you input.
+
+**co_extinction.py** contains convenience functions for reddening/dereddening and finding extinction as a function of wavelength for the Boogert et al. 2011 and Indebetouw et al. 2005 laws.
