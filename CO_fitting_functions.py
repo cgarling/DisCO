@@ -1,5 +1,13 @@
 import numpy as np
 
+#	Purpose: This code will take temperature, surface gravity, iron abundance, and asymptotic giant branch information and use the fitting functions from Marmol-Queralto et al. 2008 to produce a D_co index value.
+#	Usage: the user-level function here is co_fitting, which in turn relies on the rest of the functions.
+#	Syntax: co_fitting(theta,logg,feh,agb=False)
+#	Theta: Float. Effective temperature divided by 5040 K.
+#	logg: Float. The logarithm of the surface gravity.
+#	feh: Float. The iron abundance [Fe/H].
+#	agb: Boolean. Is the star on the asymptotic giant branch? If yes, use special fitting function.
+
 #setting up each of the functions we'll be using in different regions of temperature 
 def hot_dwarfs(theta,logg,feh):
 	c0=0.0499
