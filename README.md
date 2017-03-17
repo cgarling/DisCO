@@ -20,3 +20,5 @@ These equations should be used by calling the function co_fitting(theta,logg,feh
 The function will return the value of the D<sub>CO</sub> index for a star with the properties you input.
 
 **co_extinction.py** contains convenience functions for reddening/dereddening and finding extinction as a function of wavelength for the Boogert et al. 2011 and Indebetouw et al. 2005 laws.
+
+**cardelli_convert.py** contains a function, cardelli_law, which will compute \langle A<sub>\lambda</sub> \rangle
