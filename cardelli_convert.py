@@ -4,7 +4,7 @@ from math import pi
 import numpy as np
 
 """
-Computes <A(lambda)/A(V)> using Equations 1,2, and 3 from Cardelli et al., ApJ, 1989, Vol. 345. Call the function with a wavelength (with an associated astropy unit) and a value of Rv. For example, to calculate <A(lambda)/A(V)> at 2 microns with an Rv of 4, you would execute cardelli_law(2*u.um,4.0).
+Computes <A(lambda)/A(V)> using Equations 1, 2, 3, and 4 from Cardelli et al., ApJ, 1989, Vol. 345. Call the function with a wavelength (with an associated astropy unit) and a value of Rv. For example, to calculate <A(lambda)/A(V)> at 2 microns with an Rv of 4, you would execute cardelli_law(2*u.um,4.0).
 """
 
 def cardelli_law(wavelength, rv):
