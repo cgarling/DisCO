@@ -21,4 +21,5 @@ The function will return the value of the D<sub>CO</sub> index for a star with t
 
 **co_extinction.py** contains convenience functions for reddening/dereddening and finding extinction as a function of wavelength for the Boogert et al. 2011 and Indebetouw et al. 2005 laws.
 
-**cardelli_convert.py** contains a function, cardelli_law, which will compute \langle A<sub>\lambda</sub> \rangle
+**cardelli_convert.py** contains a function, cardelli_law, which will compute ![equation](http://imgur.com/uvw4SdL)
+##$\langle A(\lambda)/A(V) \rangle$ 
