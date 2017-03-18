@@ -24,5 +24,5 @@ The function will return the value of the D<sub>CO</sub> index for a star with t
 **cardelli_convert.py** contains a function, cardelli_law, which will compute <img src="http://i.imgur.com/uvw4SdL.png" height="20">
 
 
-#![equation](http://i.imgur.com/uvw4SdL.png =100x20)
-# $\langle A(\lambda)/A(V) \rangle$ 
+[comment]: <> (![equation](http://i.imgur.com/uvw4SdL.png =100x20))
+[comment]: <> ($\langle A(\lambda)/A(V) \rangle$)
