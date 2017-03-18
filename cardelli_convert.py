@@ -12,6 +12,7 @@ def cardelli_law(wavelength, rv):
     	#wavenumber is the spectral wavenumber
         try: 
 		if len(wavelength)>1:
+                        if type(wavelength[0]) is not u.quantity.Quantity:wavelength=wavelength*u.um
 			return_list=[]
 			for i in range(len(wavelength)):
     				wavenumber=1.0/wavelength[i]
@@ -34,6 +35,7 @@ def cardelli_law(wavelength, rv):
 			return np.array(return_list)
 
 	except:
+        	if type(wavelength) is not u.quantity.Quantity:wavelength=wavelength*u.um
         	wavenumber=1.0/wavelength
 		wavenumber=wavenumber.to(1/u.um).value
 		if wavenumber>=0.3 and wavenumber<1.1:
@@ -55,8 +57,5 @@ if __name__=='__main__':
 	#plotting A(lambda)/A(V) as a test; compare to Figure 4 in Cardelli.
 	import matplotlib.pyplot as plt
 	print cardelli_law(1.11*u.um,4.0)
-	plt.plot(1/np.linspace(0.15,2.0,500),cardelli_law(np.linspace(0.15,2.0,500)*u.um,4.0))
+	plt.plot(1/np.linspace(0.15,2.0,500),cardelli_law(np.linspace(0.15,2.0,500),4.0))
 	plt.show()
-
-	#ratio of A_K/A_J
-	print cardelli_law(2.2*u.um,4.0)/cardelli_law(1.25*u.um,4.0)
