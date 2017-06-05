@@ -58,4 +58,6 @@ if __name__=='__main__':
 	import matplotlib.pyplot as plt
 	print cardelli_law(1.11*u.um,4.0)
 	plt.plot(1/np.linspace(0.15,2.0,500),cardelli_law(np.linspace(0.15,2.0,500),4.0))
+        plt.xlabel('1 / $\lambda$ ($\mu m^{-1}$)')
+        plt.ylabel('$A_{\lambda} / A_{V}$')
 	plt.show()
