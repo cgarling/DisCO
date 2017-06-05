@@ -10,7 +10,7 @@
   * index_error(wavelength, flux, flux_error)
     * Takes numpy ndarrays of wavelength (in microns only), flux, and flux errors and evaluates the numerical error on the D<sub>CO</sub> value using Equation 10 of Marmol-Queralto et al. (2008).
 
-**CO_fitting_funcs.py** contains the fitting equations of Marmol-Queralto et al. (2008). Requires Numpy.
+**CO_fitting_funcs.py** contains the fitting equations of Marmol-Queralto et al. (2008). Requires Numpy. If you'd like to run this file, it will use Matplotlib to construct a plot showing the relationship between D<sub>CO</sub> and temperature for a distribution of different values of [Fe/H].
 
 These equations should be used by calling the function co_fitting(theta,logg,feh,agb=False), with the arguments
   * theta: 5040 K / T<sub>eff</sub>

@@ -120,3 +120,39 @@ def co_fitting(theta,logg,feh,agb=False):
 
     elif theta >= 1.55 and theta <= 2.03 and logg >= -0.07 and logg <= 3.50:
 	return cold_giants(theta,logg,feh)
+
+if __name__ == "__main__":
+    import matplotlib.pyplot as plt
+    #randomly sample temperature, fe/h and plot the results
+    #constant logg=1.5
+    numpoints=1000
+    np.random.seed(3)
+
+    theta=(np.random.randn(numpoints)+1.3)*0.8
+    #logg=(np.random.randn(numpoints)+2.5)
+    logg=np.zeros(numpoints)+1.50
+    feh=np.random.randn(numpoints)
+
+    indices=[]
+    for i in range(len(theta)):
+	indices.append(co_fitting(theta[i],logg[i],feh[i]))
+
+    fig=plt.figure()
+    ax1=plt.subplot(111)
+    ax1.text(0.6,0.95,'[Fe/H] Dependence, log($g$)=1.50',transform=fig.transFigure)
+    points=ax1.scatter(theta,indices,c=feh,cmap='gist_ncar')
+    ax1.set_xlabel(r'$\theta$=(5040/T$_\mathrm{eff})$')
+    ax1.set_ylabel('D$_\mathrm{CO}$')
+    ax1.set_xlim([0.4,2.0])
+    fig.colorbar(points)
+
+    ax2=ax1.twiny()
+    new_xticks=[]
+    for i in ax1.get_xticks():
+	new_xticks.append(str(5040./i).split('.',1)[0])
+    ax2.set_xlim(ax1.get_xlim())
+    ax2.set_xticks(ax1.get_xticks())
+    ax2.set_xticklabels(new_xticks)
+    ax2.set_xlabel(r'T$_\mathrm{eff}$ (K)')
+    plt.show(fig)
+    plt.close(fig)
