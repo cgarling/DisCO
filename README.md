@@ -1,6 +1,6 @@
 
 [comment]: # (co_work)
-### Code relating to analysis of the CO absorption feature at 2.3 microns
+### Determination of spectral types and extinctions from the discontinuous CO index 
 
 **co_index.py** contains functions to evaluate the D<sub>CO</sub> index of Marmol-Queralto et al., 2008, A&A, 489 (<http://adsabs.harvard.edu/abs/2008A%26A...489..885M>). Requires Scipy and Numpy. If you'd like to run the file, it will grab data from a K0III star from the SpeX IRTF Library (Rayner et al. 2009), plot it using Matplotlib, and compute the value of the D<sub>CO</sub> index and its numerical uncertainty.
 
