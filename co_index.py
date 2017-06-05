@@ -43,3 +43,24 @@ def index_error(all_wavelength,all_flux,all_error):
 	F_c=(np.sum(goodflux1)+np.sum(goodflux2))/((continuum1[1]-continuum1[0])+(continuum2[1]-continuum2[0]))
 	sigma_c=(np.sum(gooderr1)+np.sum(gooderr2))/((continuum1[1]-continuum1[0])+(continuum2[1]-continuum2[0]))
 	return np.sqrt((F_c**2*sigma_a**2 + F_a**2*sigma_c**2)/(F_a**4))
+
+if __name__ == '__main__':
+        import urllib2
+        import matplotlib.pyplot as plt
+        # import the file from SpeX library
+        file = urllib2.urlopen('http://irtfweb.ifa.hawaii.edu/~spex/IRTF_Spectral_Library/Data/K0III_HD100006.txt')
+        wavelength, flux_density, flux_density_error=np.loadtxt(file,unpack=True,dtype='f,f,f')
+        wavelength=wavelength[flux_density!=-999]
+        flux_density=flux_density[flux_density!=-999]
+        flux_density_error=flux_density_error[flux_density!=-999]
+        # convert to flux from flux density
+        flux=flux_density*wavelength
+        flux_error=flux_density_error*wavelength
+        # calculate the index and the index error
+        index_val = index(wavelength,flux)
+        index_val_error = index_error(wavelength,flux,flux_error)
+        plt.plot(wavelength,flux,c='b')
+        plt.title("D$_{CO}$ = "+str(index_val)+' $\pm$ '+str(index_val_error))
+        plt.xlabel('$\mu m$')
+        plt.ylabel('W / $m^2$')
+        plt.show()
